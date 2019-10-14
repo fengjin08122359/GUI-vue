@@ -1,0 +1,9 @@
+{
+  "port": "8080",
+  "proxy": {
+    "/any800/": {
+      "target": "http://jk.demo.xiaoi.net",
+      "changeOrigin": true
+    }
+  }
+}
