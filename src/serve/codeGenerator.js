@@ -3,13 +3,13 @@ let codeGen = {
   start () {
     return new Promise((resolve) => {
       pool.exec('code-generator-mike start')
-      resolve(res)
+      resolve({})
     })
   },
   stop () {
     return new Promise((resolve) => {
       pool.exec('code-generator-mike stop')
-      resolve(res)
+      resolve({})
     })
   }
 }

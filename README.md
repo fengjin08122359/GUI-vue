@@ -61,8 +61,12 @@ codeif  https://codeif.xinke.org.cn/
 
 目录转换,postman,依赖绑定
 
-本地启动code-gen项目
-在程序中访问
+(x) 本地启动code-gen项目,在程序中访问
+(x) 修复了windows中不同盘间跳转的错误
 
-
-
+( ) 新增常见工具
+( ) 工具1: VSOCDE,以及安装插件包的方法提示
+( ) 工具2: Hbuilder
+( ) 工具3: favicon转换地址与配置
+( ) 工具4: 常用地址 a.流程图地址 b.vue,vue-cli c.element-ui d.iconfont
+( ) 安装插件报错处理

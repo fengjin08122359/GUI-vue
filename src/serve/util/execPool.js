@@ -3,6 +3,7 @@ const {addline} = require('./commandline')
 var pool = {
   list: [],
   exec (code, name='') {
+    code = 'chcp 65001 && ' + code
     var workerProcess = exec(code, { encoding: 'utf8' })
     if (name) {
       this.list.push({

@@ -41,6 +41,7 @@ export default {
     bottom: 0;
     right: 30%;
     left: 0;
+    overflow:auto;
   }
   .right {
     position: absolute;
@@ -48,6 +49,7 @@ export default {
     bottom: 0;
     right: 0;
     width:30%;
+    overflow:auto;
   }
 }
 </style>

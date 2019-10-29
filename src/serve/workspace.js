@@ -63,7 +63,7 @@ var project = {
     return new Promise((resolve, reject) => {
       var checkDirPath = fs.existsSync(dirpath)
       if (name && checkDirPath) {
-        pool.exec(`cd ${dirpath} && nclient-build project ${name} --dir=./`)
+        pool.exec(`cd /d ${dirpath} && nclient-build project ${name} --dir=./`)
         resolve()
       } else {
         reject()
@@ -74,7 +74,7 @@ var project = {
     var projectpath = path.resolve(path.join(dirpath, name));
     return new Promise((resolve, reject) => {
       if (name) {
-        pool.exec(`cd ${projectpath} && pm2 start ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve --name ${name}  -- serve --fix --open`)
+        pool.exec(`cd /d ${projectpath} && pm2 start ./node_modules/@vue/cli-service/bin/vue-cli-service.js serve --name ${name}  -- serve --fix --open`)
       }
       resolve()
     })
@@ -90,7 +90,7 @@ var project = {
   build (name, dirpath) {
     var projectpath = path.resolve(path.join(dirpath, name));
     return new Promise((resolve, reject) => {
-      var target = pool.exec(`cd ${projectpath} && npm run build  && cd dist && jar -cvf ${name}.zip *`)
+      var target = pool.exec(`cd /d ${projectpath} && npm run build  && cd /d dist && jar -cvf ${name}.zip *`)
       var distpath = path.resolve(projectpath, `./dist/${name}.zip`);
       target.on('close', function (code) {
         if (code == 0) {
@@ -110,7 +110,7 @@ var project = {
   transform (name, dirpath) {
     var projectpath = path.resolve(path.join(dirpath, name));
     return new Promise((resolve, reject) => {
-      var target = pool.exec(`cd ${projectpath} && nclient-build fast-config`)
+      var target = pool.exec(`cd /d ${projectpath} && nclient-build fast-config`)
       target.on('close', function (code) {
         if (code == 0) {
           resolve(projectpath)
@@ -123,7 +123,7 @@ var project = {
   install (name, dirpath) {
     var projectpath = path.resolve(path.join(dirpath, name));
     return new Promise((resolve, reject) => {
-      var target = pool.exec(`cd ${projectpath} && npm install`)
+      var target = pool.exec(`cd /d ${projectpath} && npm install`)
       target.on('close', function (code) {
         if (code == 0) {
           resolve(projectpath)
