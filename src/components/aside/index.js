@@ -10,6 +10,8 @@ class Aside extends DataHandle{
       url: 'https://codeif.xinke.org.cn/'
     },{
       name: 'guide',
+    },{
+      name: 'tools',
     }]
   }
   init () {

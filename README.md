@@ -64,9 +64,11 @@ codeif  https://codeif.xinke.org.cn/
 (x) 本地启动code-gen项目,在程序中访问
 (x) 修复了windows中不同盘间跳转的错误
 
-( ) 新增常见工具
-( ) 工具1: VSOCDE,以及安装插件包的方法提示
-( ) 工具2: Hbuilder
-( ) 工具3: favicon转换地址与配置
-( ) 工具4: 常用地址 a.流程图地址 b.vue,vue-cli c.element-ui d.iconfont
-( ) 安装插件报错处理
+(x) 新增常见工具
+(x) 工具1: VSOCDE,以及安装插件包的方法提示
+(x) 工具2: Hbuilder
+(x) 工具3: favicon转换地址与配置
+(x) 工具4: 常用地址 a.流程图地址 b.vue,vue-cli c.element-ui d.iconfont
+(x) 安装插件报错处理
+(x) nclient-build 命令
+(x) npm 命令整理日志提交//

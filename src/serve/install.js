@@ -11,7 +11,10 @@ var nodejs = {
     })
   },
   install () {
-    window.open('http://nodejs.cn/download/')
+    return new Promise((reslove, reject) => {
+      window.open('http://nodejs.cn/download/')
+      reslove()
+    })
   }
 }
 var pm2 = {
@@ -56,7 +59,7 @@ var nclientBuild = {
     })
   },
   install () {
-    return new Promise(({reslove, reject}) => {
+    return new Promise((reslove, reject) => {
       var test = pool.exec('npm install -g nclient-build');
       test.on('close', function (code) {
         if (code == 0) {
@@ -84,7 +87,7 @@ var codeGen = {
     })
   },
   install () {
-    return new Promise(({reslove, reject}) => {
+    return new Promise((reslove, reject) => {
       var test = pool.exec('npm install -g code-generator-mike');
       test.on('close', function (code) {
         if (code == 0) {

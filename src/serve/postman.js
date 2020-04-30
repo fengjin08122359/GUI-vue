@@ -100,9 +100,9 @@ var postman = {
             return httplink('${item.name}', \`${item.url}\`,{${outArray.join(',')}}, '${item.type}')
           },
           `
-          axiosConfig += `var ${item.name} = ({${inArray.join(',')}}) => {
+          axiosConfig += `export const ${item.name} = ({${inArray.join(',')}}) => {
         return httpInstance.${item.type}(\`${item.url}\`, {${outArray.join(',')}})
-      };
+      };0
       `
           axiosExportConfig += `${item.name},
       `
@@ -159,11 +159,7 @@ var exportConfig = {
   
   /* http start */
   /* http end */
-  
-  export {
-    /* export start */
-  /* export end */
-  }`,
+  `,
   http: `import {httplink, Handle} from 'nclient-microfront'
 
   var http = new Handle({

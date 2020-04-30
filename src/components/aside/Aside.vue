@@ -12,6 +12,9 @@
             <template v-else-if='item.name=="guide"'>
               <span>启动指南</span>
             </template>
+            <template v-else-if='item.name=="tools"'>
+              <span>工具箱</span>
+            </template>
             <template v-else>
               {{item.name}}<div class='fa fa-remove' @click="removeTab(item)"></div>
             </template>
@@ -29,6 +32,9 @@
           <template v-else-if='item.name=="guide"'>
             <Guide></Guide>
           </template>
+          <template v-else-if='item.name=="tools"'>
+            <Tools></Tools>
+          </template>
           <template v-else>
             <iframe :src="item.url"></iframe>
           </template>
@@ -40,7 +46,9 @@
 <script>
 import Command from './command/Command.vue'
 import Guide from './guide/Guide.vue'
+import Tools from './tools/Tools.vue'
 import { Aside } from "./index";
+
 export default {
   name: 'Aside',
   data() {
@@ -92,7 +100,7 @@ export default {
       }
     }
   },
-  components: {Command,Guide}
+  components: {Command,Guide,Tools}
 }
 </script>
 
